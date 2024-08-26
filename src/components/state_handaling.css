@@ -1,0 +1,46 @@
+.container1{
+    /* border: 1px solid hsla(0, 6%, 68%, 0.571);
+  
+   box-shadow: 5px 5px 5px hsla(0, 21%, 18%, 0.443); */
+
+   /* border-radius:6px ;
+   text-align: center;
+   margin: 15px;
+   padding: 15px;
+     max-width: 200em;
+     height:9em; */
+    display: flex;
+    
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+/* color: aliceblue; */
+/* background-color: rgba(0, 0, 0, 0.831); */
+
+    
+}
+.character{
+    margin: 10px;
+    padding: 10px;
+    /* border: 1px solid hsla(0, 0%, 100%, 0.571);
+    border-radius:10px ;
+   box-shadow: 5px 1px 5px hsla(0, 21%, 18%, 0.443); */
+   text-align: center;
+}
+.words{
+    margin: 10px;
+    padding: 10px;
+    /* border: 1px solid hsla(0, 0%, 100%, 0.571);
+    border-radius:10px ;
+   box-shadow: 5px 1px 5px hsla(0, 21%, 18%, 0.443); */
+   text-align: center;
+}
+.readtime{
+    margin: 10px;
+    padding: 10px;
+    /* border: 1px solid hsla(0, 0%, 100%, 0.571);
+    border-radius:10px ;
+   box-shadow: 5px 1px 5px hsla(0, 21%, 18%, 0.443); */
+   text-align: center;
+}
+
