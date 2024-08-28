@@ -20,15 +20,15 @@ function App() {
 
    const [alert, setalert] = useState(null);
 
-   const [colorss,setcolorss] = useState("light")
+  //  const [colorss,setcolorss] = useState("light")
 
-   const forchange =()=>{
- if(colorss==="light"){
-  setcolorss("dark")
- }else{
-  setcolorss("light")
- }
-   }
+//    const forchange =()=>{
+//  if(colorss==="light"){
+//   setcolorss("dark")
+//  }else{
+//   setcolorss("light")
+//  }
+//    }
 
   
 const showalert =(massage,type)=>{
@@ -65,7 +65,7 @@ setTimeout (()=>{
   
 
   return (
-    <Router>
+    // <Router>
     <>
    
       <Navbar
@@ -73,7 +73,7 @@ setTimeout (()=>{
         mode={mode}
         text={text}
         toggleMode={toggleMode}
-        forchange={forchange}
+        // forchange={forchange}
         about="AboutTextutil"
       />
 
@@ -83,21 +83,21 @@ setTimeout (()=>{
   <Taxtarea heading="Enter the some taxt"  />
 
 </div> */}
-  <Routes>
-  <Route exact path="/" element={<State_handaling heading="Word Counter" mode={mode} showalert={showalert} />} />
+  {/* { <Routes>
+  <Route exact path="/" element={} />
   <Route exact path="/about" element={<About />} />
-</Routes>
+</Routes> } */}
 
       
-
+<State_handaling heading="Word Counter" mode={mode} showalert={showalert} />
       
 
       {/* <Card/> */}
       {/* <Sometext colorss={colorss} forchange={forchange}/> */}
-    
+    <About toggleMode={toggleMode}  mode={mode}/>
      
     </>
-    </Router>
+    // </Router>
   );
 }
 

@@ -98,7 +98,7 @@ const[text,settext]=useState("");
 
 
 
-<div className="result" style={{color:props.mode==="dark"? "white":"black"}}>
+<div className={`result text-${props.mode==='light' ? "black" :"white"}`}>
 
 {/* <h2>Text Count</h2> */}
 <div className='container1' >
@@ -107,8 +107,7 @@ const[text,settext]=useState("");
 <p>Character</p>
 </div>
 <div className='words'>
-<h2>{text.split(" ").length-1
-  }</h2>
+<h2>{text.split(" ").filter((element)=>{return element.length !=0}).length}</h2>
 <p>Words</p>
 </div>
 
