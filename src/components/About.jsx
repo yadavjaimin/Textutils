@@ -3,37 +3,20 @@ import React ,{useState} from "react";
 
 
 
-export default function About() {
-  const [mystyle, setmystyle] = useState({color: "white",
-    backgroundColor:"black"})
-
-    const [btntext, setbtntext] = useState("Light Mode")
+export default function About(props) {
+ 
     
-   const togglestyle =()=>{
-      if(mystyle.backgroundColor==="black"){
-
-        setmystyle({color:"black", backgroundColor:"white",border:"1px solid black"});
-        setbtntext("Dark Mode")
-      }
-      else{
-        setmystyle({color:"white",
-           backgroundColor:"black",
-           border:"1px solid white"});
-
-        setbtntext("Light Mode");
-      }
-    }
-   
+  
   
   return (
-    <div className="container" style={mystyle}>
+    <div className={`container text-${props.mode=="light" ? "dark" :"white"}`} style={{backgroundColor:props.mode=="light"? "white":"black"}}>
       <h1 className="my-3">About Us</h1>
       <div class="accordion" id="accordionExample" >
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
-              class="accordion-button"
-              style={mystyle}
+              class={`accordion-button text-${props.mode=="light" ? "dark" :"white"}`}
+              style={{backgroundColor:props.mode=="light"? "white":"black"}}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -48,7 +31,7 @@ export default function About() {
             class="accordion-collapse collapse show"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body" style={mystyle}>
+            <div class={`accordion-body text-${props.mode=="light" ? "dark" :"white"}`} style={{backgroundColor:props.mode=="light"? "white":"black"}} >
               <strong>This is the first item's accordion body.</strong> It is
               shown by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control
@@ -63,8 +46,8 @@ export default function About() {
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
-              class="accordion-button collapsed"
-              style={mystyle}
+              class={`accordion-button text-${props.mode=="light" ? "dark" :"white"}`}
+              style={{backgroundColor:props.mode=="light"? "white":"black"}}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
@@ -79,7 +62,7 @@ export default function About() {
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body" style={mystyle}>
+            <div class= {`accordion-body text-${props.mode=="light" ? "dark" :"light"}`}style={{backgroundColor:props.mode=="light"? "white":"black"}}  >
               <strong>This is the second item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classes that we use to style each element. These classes control
@@ -94,8 +77,8 @@ export default function About() {
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
-              class="accordion-button collapsed"
-              style={mystyle}
+              class={`accordion-button text-${props.mode=="light" ? "dark" :"white"}`}  
+              style={{backgroundColor:props.mode=="light"? "white":"black"}}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
@@ -110,26 +93,20 @@ export default function About() {
             class="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body" style={mystyle}>
+            <div class={`accordion-body text-${props.mode=="light" ? "dark" :"white"}`}style={{backgroundColor:props.mode=="light"? "white":"black"}}  >
             <div className='container'>
        
 
 
-<ul className='skill' >
-  
-    <li>c/c++</li>
-    <li>Java Script</li>
-    <li>PHP</li>
-    <li>React</li>
-</ul>
+<p>my name is jaimin</p>
             </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container my-3">
+      {/* <div className="container my-3">
         <button onClick={togglestyle} type="button" class="btn btn-warning">{btntext}</button>
-      </div>
+      </div> */}
     </div>
   );
 }
