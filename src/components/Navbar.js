@@ -2,21 +2,23 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 
 export default function Navbar(props) {
+
+
   return (
     <>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">{props.title}</a>  {/* Use Link instead of link */}
+          <Link  className="navbar-brand" to="/">{props.title}</Link>  {/* Use Link instead of link */}
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>  {/* Use Link instead of link */}
+                <Link className="nav-link active" aria-current="page" to="/" >Home</Link>  {/* Use Link instead of link */}
               </li>
               <li className="nav-item">
-                <a className="nav-link" href='/about'>{props.about}</a>  {/* Use Link instead of link */}
+                <Link className="nav-link" to='/about' >{props.about}</Link>  {/* Use Link instead of link */}
               </li>
             </ul>
 
@@ -25,8 +27,22 @@ export default function Navbar(props) {
               <label className="form-check-label" htmlFor="flexSwitchCheckDefault">setttt</label>
             </div> */}
 
+<div className='color-changer bg-danger m-lg-2' onClick={()=>{props.toggleMode('danger')}} style={{height:20,width:20,cursor:'pointer'}}>
+</div>
+ 
+<div className='color-changer bg-success m-lg-2' onClick={()=>{props.toggleMode('success')}} style={{height:20,width:20,cursor:'pointer'}}>
+</div>
+
+<div className='color-changer bg-warning m-lg-2' onClick={()=>{props.toggleMode('warning')}} style={{height:20,width:20,cursor:'pointer'}}>
+</div>
+
+<div className='color-changer bg-white m-lg-2' onClick={()=>{props.toggleMode('white')}} style={{height:20,width:20,cursor:'pointer'}}>
+</div>
+
+
+
             <div className={`form-check form-switch text-${props.mode === "dark" ? "light" : "dark"}`}>
-              <input className="form-check-input" type="checkbox" onClick={props.toggleMode} id="flexSwitchCheckChecked" />
+              <input className="form-check-input" type="checkbox" onClick={()=>{props.toggleMode(null)}} id="flexSwitchCheckChecked" />
               <label className="form-check-label" htmlFor="flexSwitchCheckChecked">{props.text}</label>
             </div>
           </div>
